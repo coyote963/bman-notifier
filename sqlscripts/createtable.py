@@ -1,7 +1,7 @@
 import sqlite3
 from sqlite3 import Error
+from parsediscordconfigs import filelocation
 
- 
 def create_connection(db_file):
     """ create a database connection to the SQLite database
         specified by db_file
@@ -32,7 +32,7 @@ def create_table(conn, create_table_sql):
  
  
 def main():
-    database = r"C:\sqlite\db\pythonsqlite.db"
+    database = filelocation
  
     sql_create_projects_table = """ CREATE TABLE IF NOT EXISTS discordusers (
                                         id integer PRIMARY KEY,

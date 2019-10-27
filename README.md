@@ -1,4 +1,5 @@
-# bman-notifier
+# bman-notifier / Coyote Bot
+![Image of Coyote Bot](https://i.ibb.co/2Ywpxqm/coyotebot.jpg)
 
 A system for notifying users when a server reaches capacity
 

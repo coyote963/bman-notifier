@@ -1,6 +1,6 @@
 import sqlite3
 from sqlite3 import Error
- 
+from parsediscordconfigs import filelocation
  
 def create_connection(db_file):
     """ create a database connection to a SQLite database """
@@ -16,4 +16,4 @@ def create_connection(db_file):
  
  
 if __name__ == '__main__':
-    create_connection(r"C:\sqlite\db\pythonsqlite.db")
+    create_connection(filelocation)

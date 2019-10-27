@@ -6,6 +6,8 @@ Contains two components: first component is for connection to a spasman server. 
 
 The second portion is a discord bot that connects to a channel and posts pings to users when the first component detects that the number of players in the spasman server reach a certain number.
 
+This was tested on python 3.7. Not sure if it'll work for earlier ones. It also uses discord.py libary 1.2.3
+
 ### Settings files ###
 
 There are two settings files that will need to be created
@@ -43,3 +45,37 @@ There is a few things that I still need to do, and help would be appreciated.
 
 I need to add a way for users to set custom time limits for sending notifications, add commands to the discord bot such that it can pull up stats on the player
 
+### file structure ###
+
+`example.py` is where json packets get parsed. start parser should be the entry point where you read packets by passing in a callback
+
+`coybot.py` a minimalist discord bot for configuring their notifications
+
+`helpers.py` useful functions for sockets
+
+`matchupdater.py` contains a process that requests match info every X seconds
+
+`parseconfigs.py` parses the config file
+
+`rcontypes.py` enums for request_event, request_data
+
+`startprocessing.py` Entry function for the matchupdater and the example.py.
+
+
+#### In the sqlscripts ####
+
+This folder isn't really just for sql scripts, it just contains some useful functionality for SQL on top of discord functions
+
+`createdb`
+
+`createtable`
+
+`discord_webhook` contains a single function for sending a webhook request out
+
+`insertdiscorduser.py` the only useful function here is the initial script
+
+`parsediscordconfigs.py`
+
+`sqlmethods.py` the crud operations for discord users go here
+
+`notify.py` the logic for notifying users

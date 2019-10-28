@@ -7,7 +7,11 @@ Contains two components: first component is for connection to a spasman server. 
 
 The second portion is a discord bot that connects to a channel and posts pings to users when the first component detects that the number of players in the spasman server reach a certain number.
 
-This was tested on python 3.7. Not sure if it'll work for earlier ones. It also uses discord.py libary 1.2.3
+This was tested on python 3.7. Not sure if it'll work for earlier ones. Requires
+
+discord.py library v=1.2.3
+
+configparser
 
 ### Settings files ###
 

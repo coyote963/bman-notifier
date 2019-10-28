@@ -1,6 +1,6 @@
 import requests
 import json
-webhookurl = 'https://discordapp.com/api/webhooks/637851459203104779/AlmKXxfwx7YtAXn4cbOftRvm0I81v5rT8bF66JBHQeqQjZkmUDfrqJZau5FUYPSZbtDu'
+webhookurl = ''
 
 def execute_webhook(content):
 	data = {}

@@ -3,11 +3,15 @@ import json
 from sqlscripts.parsediscordconfigs import url
 webhookurl = url
 
-def execute_webhook(content):
+def execute_webhook(content, url = None):
 	data = {}
 	data["content"] = content
 	data["username"] = "coybot"
-	result = requests.post(webhookurl, data=json.dumps(data), headers={"Content-Type": "application/json"})
+	if url == None:
+		result = requests.post(webhookurl, data=json.dumps(data), headers={"Content-Type": "application/json"})
+	else:
+		result = requests.post(url, data=json.dumps(data), headers={"Content-Type": "application/json"})
+	
 	try:
 	    result.raise_for_status()
 	except requests.exceptions.HTTPError as err:

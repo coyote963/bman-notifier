@@ -8,3 +8,5 @@ if len(parser.sections()) < 1:
 filelocation = parser.get('connections', 'filelocation')
 token = parser.get('connections', 'token')
 url = parser.get('connections', 'url')
+urlsvl = parser.get('connections', 'urlsvl')
+urlsvlmissions = parser.get('connections', 'urlsvlmissions')

@@ -3,7 +3,7 @@ import sys
 import socket
 
 from rcontypes import rcon_receive
-from parseconfigs import ip, port, password 
+from parseconfigs import ip, port, password, blocking
 
 # function to get a socket object
 def get_socket():
@@ -13,9 +13,12 @@ def get_socket():
 	#create a global TCP socket, Boring Man RCON uses a separate TCP socket unlike the rest of the games netcode
 	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	#we turn TCP blocking on and off because its just easier that way
-	sock.setblocking(1)
-	sock.connect(server_address)
-	sock.setblocking(0)
+	if not blocking:
+		sock.setblocking(1)
+		sock.connect(server_address)
+		sock.setblocking(0)
+	else:
+		sock.connect(server_address)
 	#send a 'rcon_receive.login' packet with your RCON password as the string data
 	send_packet(sock, server_password,rcon_receive.login.value)
 	return sock    

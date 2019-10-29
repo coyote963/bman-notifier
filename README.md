@@ -24,7 +24,10 @@ There are two settings files that will need to be created
 ip = 127.0.0.1
 port = 43210
 password = admin
+blocking = yes/no 1/0 on/off
 ```
+
+Blocking blocks the socket before it tries to read more, be careful about it because it was tested with blocking OFF, and I am not sure what errors may arise with it ON. That being said, this is the more performant option
 
 ./sqlscripts/discordsettings.ini
 ```
@@ -32,6 +35,9 @@ password = admin
 filelocation = C:\path\to\your\sqlite\database.db
 token = ThisIsYourDiscordBotToken
 url = https://discordapp.com/api/webhooks/thisisyourwebhookurl
+urlsvl = https://discordapp.com/api/webhooks/thisisyoursvlchatwebhookurl
+urlsvlmissions = https://discordapp.com/api/webhooks/thisisyoursvlchatmissionwebhookurl
+
 ```
 
 Add a way for users to configure their time delta and be notified more/less frequently

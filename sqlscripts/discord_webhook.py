@@ -1,6 +1,7 @@
 import requests
 import json
-webhookurl = ''
+from sqlscripts.parsediscordconfigs import url
+webhookurl = url
 
 def execute_webhook(content):
 	data = {}

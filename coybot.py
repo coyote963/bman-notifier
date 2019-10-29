@@ -44,5 +44,11 @@ async def on_message(message):
                     await message.channel.send('Updated, now it is {}'.format(user_input))
                 else:
                     await message.channel.send('Check ur syntax')
+    if message.content.startswith("!getcap"):
+        discord_id = get_discord_user(conn, str(message.author.id))
+        if discord_id == None:
+            await message.channel.send('U need to be registered in this list before you can set cap')
+        else:
+            await message.channel.send('Your current cap is set to {}'.format(discord_id[1]))
 #change this to coybot?
 client.run(token)

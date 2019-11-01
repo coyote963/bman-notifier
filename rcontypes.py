@@ -64,3 +64,14 @@ class rcon_receive(Enum):
 	request_match = 5
 	confirm = 6
 	request_scoreboard = 7
+
+class Mission(Enum):
+	kill_everything = 0
+	kill_with_any_weapon = 1
+	kill_any_with_a_weapon = 2
+	deliver = 3
+	do_damage = 4
+	intel = 5
+	revive = 6
+	boss = 7
+	kill_with_a_weapon = 8
